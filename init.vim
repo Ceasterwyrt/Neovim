@@ -14,7 +14,8 @@
 "                     =#   ++                                                  "
 "                     -#%*#-                                                   "
 "                                                                              "
-" This configuration file is still very much in development, but it's usable.  "
+" This configuration file is still very much in development, but it's usable.
+" Has Windows file paths.
 " ============================================================================ "
 " CONTENTS                                                          *contents* "
 "                                                                              "
@@ -101,7 +102,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'equalsraf/neovim-gui-shim'
 
-" Colorschemes
+" Colourschemes
 Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
 Plug 'yorickpeterse/vim-paper'
 
@@ -145,33 +146,8 @@ let g:neovide_fullscreen = v:true
 " 5. Shortcuts                                                     *shortcuts*
 
 command Documents :cd ~\Documents
-command Misc :cd ~\Misc
 command Config :e ~\AppData\Local\nvim\init.vim
 command GConfig :e ~\AppData\Local\nvim\ginit.vim
-"command Guia :e ~\Documents\Vim\Checklist.txt | :wincmd v | :wincmd w | :e ~\Documents\Vim\Guia.txt | :wincmd v | :wincmd w | :e ~\Documents\Vim\Info.txt | :wincmd s | :wincmd w | :e ~\Documents\Vim\Notas.txt | :vertical resize 50 | :wincmd w | :vertical resize 33 | :wincmd w | :e ~\Documents\Vim\AsciiDoc\Guia.txt
-command Guia :e ~\Documents\Vim\Checklist.txt | :wincmd v | :wincmd w | :e ~\AppData\Local\nvim\init.vim | :wincmd v | :wincmd w | :e ~\Documents\Vim\Info.txt | :wincmd s | :wincmd w | :e ~\Documents\Vim\Notas.txt | :vertical resize 50 | :wincmd w | :vertical resize 33 | :wincmd w | :wincmd s | :wincmd w | :horizontal resize 24 |:e ~\Documents\Vim\Guia.txt | :e ~\Documents\Vim\AsciiDoc\Guia.txt
-
-" ============================================================================ "
-" Macros para Serviço
-
-" Checklist
-
-" Entrada
-let @e = 'mb^3lxi✓gg2jVG:sort`b'
-
-" Saída
-let @s = 'mb^6lxi✓gg2jVG:sort`b'
-
-" Finalizado
-let @r = "mb^3lxi✓3lxi✓2lxi'$a'gg2jVG:sort`b"
-
-"Resetar
-let @l = ":%s/'/ /e:%s/'//e:%s/✓/ /gegg2jVG:sort6gg@e9gg@e14gg@e24gg@e30gg@e32gg@e33gg@e/ach/"
-
-" Script para remover acentos e outros caracteres especiais para uso no sintegra
-command AccentMarks :%s/[[=a=]]/a/ge | :%s/[[=e=]]/e/ge | :%s/[[=i=]]/i/ge | :%s/[[=o=]]/o/ge | :%s/[[=u=]]/u/ge | :%s/[[=A=]]/A/ge | :%s/[[=E=]]/E/ge | :%s/[[=I=]]/I/ge | :%s/[[=O=]]/O/ge | :%s/[[=U=]]/U/ge | :%s/-/ /ge | :%s/+/ /ge | :%s/\// /ge | :%s/,/ /ge | :%s// /ge | :%s//A/ge | :%s/ç/c/ge | :%s/Ç/C/ge | :%s/\\/ /ge | :%s/Go/GO/ge | :%s/Ce/CE/ge
-
-command Getrid :%s/\///ge | :%s/\.//ge | :%s/-//ge
 
 " ============================================================================ "
 " 6. Lua                                                                 *lua*
